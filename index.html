@@ -3,9 +3,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>beautiful aura | serene page</title>
+    <!-- Poppins font – clean, modern, elegant -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free) – subtle icons for delicate touch -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(145deg, #f9f3e8 0%, #ffe9df 100%);
+            color: #3a2c29;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+        }
+
+        /* soft natural container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+        }
+
+        /* --- header / navigation --- */
+        header {
+            background: rgba(255, 245, 235, 0.72);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid rgba(255, 215, 190, 0.4);
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #7c5e4b;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            margin-right: 6px;
+            color: #d9aa7e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            font-weight: 300;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4f3d34;
+            font-size: 1.1rem;
+            border-bottom: 1px solid transparent;
+            transition: 0.25s;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #ca9a7c;
+            color: #2d1f1a;
+        }
+
+        /* --- hero / main beauty --- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 3.5rem 1.5rem 4rem 1.5rem;
+            background: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="2.5" fill="%23e6cfbc" opacity="0.3"/><circle cx="10" cy="12" r="4" fill="%23edd7c5" opacity="0.25"/><circle cx="52" cy="20" r="6" fill="%23edd7c5" opacity="0.2"/><circle cx="45" cy="48" r="5" fill="%23e6cfbc" opacity="0.25"/></svg>');
+            background-repeat: repeat;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            color: #4b362b;
+            text-shadow: 2px 2px 8px rgba(255, 235, 215, 0.8);
+        }
+
+        .hero h1 span {
+            font-weight: 300;
+            font-style: italic;
+            color: #b0866b;
+        }
+
+        .hero .sub {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-top: 1rem;
+            max-width: 700px;
+            color: #6f5547;
+            background: rgba(255, 255, 240, 0.4);
+            backdrop-filter: blur(4px);
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        /* --- wave divider (elegant shape) --- */
+        .custom-wave {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: -1px;
+        }
+
+        /* --- cards : graceful, soft, airy --- */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            background: rgba(255, 250, 245, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 40px 16px 40px 16px;
+            padding: 2.2rem 1.8rem;
+            transition: all 0.3s cubic-bezier(0.15,0.75,0.5,1);
+            border: 1px solid rgba(255, 238, 225, 0.9);
+            box-shadow: 0 25px 35px -18px rgba(90, 60, 40, 0.15);
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.01);
+            background: rgba(255, 245, 235, 0.85);
+            border-color: #f7cfb5;
+            box-shadow: 0 30px 40px -15px rgba(130, 80, 50, 0.2);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #c29b7b;
+            margin-bottom: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .card:hover i {
+            transform: scale(1.06);
+            color: #b2825c;
+        }
+
+        .card h3 {
+            font-size: 1.9rem;
+            font-weight: 350;
+            margin-bottom: 0.75rem;
+            color: #4a3429;
+        }
+
+        .card p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #5f4a3c;
+        }
+
+        /* --- quote / serenity banner --- */
+        .serene-banner {
+            background: #f4e1d4;
+            background-image: radial-gradient(circle at 0% 30%, rgba(255,255,240,0.6) 10%, transparent 30%),
+                              radial-gradient(circle at 100% 80%, rgba(235,205,180,0.6) 15%, transparent 35%);
+            border-radius: 120px 20px 120px 20px;
+            margin: 4rem 0;
+            padding: 3rem 2.5rem;
+            color: #3e2e25;
+            text-align: center;
+            border: 1px solid rgba(255, 230, 210, 0.9);
+            box-shadow: inset 0 0 0 2px rgba(250, 245, 240, 0.7), 0 20px 30px -15px rgba(120, 70, 40, 0.2);
+        }
+
+        .serene-banner i {
+            font-size: 3rem;
+            opacity: 0.7;
+            color: #9b7c66;
+            margin-bottom: 1rem;
+        }
+
+        .serene-banner p {
+            font-size: 1.9rem;
+            font-weight: 280;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .serene-banner .author {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        /* --- gallery / minimalist美学 --- */
+        .gallery-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 4rem 0 3rem;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            flex: 1 1 240px;
+            max-width: 280px;
+            background: rgba(255, 245, 235, 0.5);
+            backdrop-filter: blur(3px);
+            border-radius: 3rem 1rem 3rem 1rem;
+            overflow: hidden;
+            box-shadow: 0 12px 18px -10px rgba(100, 60, 30, 0.1);
+            transition: 0.25s ease;
+            border: 1px solid rgba(255, 230, 210, 0.8);
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 20px 27px -12px rgba(130, 80, 50, 0.2);
+            transform: scale(1.02);
+            background: rgba(255, 240, 230, 0.8);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+            filter: sepia(10%) brightness(1.01) contrast(1.02);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery-caption {
+            padding: 1rem 1rem 1.5rem 1rem;
+            font-weight: 300;
+            text-align: center;
+            color: #4f3e33;
+            font-size: 0.95rem;
+        }
+
+        /* --- footer delicate --- */
+        footer {
+            background: rgba(220, 195, 175, 0.25);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255, 225, 200, 0.6);
+            margin-top: 4rem;
+            padding: 2rem 0;
+            font-weight: 300;
+            text-align: center;
+            color: #5e4b3d;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-content .social a {
+            color: #7c6050;
+            margin: 0 0.8rem;
+            font-size: 1.5rem;
+            transition: 0.2s;
+        }
+
+        .footer-content .social a:hover {
+            color: #b48b6e;
+            transform: translateY(-2px);
+        }
+
+        .tiny-dots {
+            opacity: 0.5;
+            letter-spacing: 6px;
+            font-size: 1.2rem;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e5cbb8, transparent);
+            margin: 2rem 0 1rem;
+        }
+
+        /* responsive tweaks */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .nav-bar {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .nav-links {
+                gap: 1.6rem;
+            }
+            .serene-banner p {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+<!-- ==========  sticky, soft header ========== -->
+<header>
+    <div class="container nav-bar">
+        <a href="#" class="logo"><i class="fa-regular fa-star"></i> aura</a>
+        <div class="nav-links">
+            <a href="#">home</a>
+            <a href="#">essence</a>
+            <a href="#">gallery</a>
+            <a href="#">journal</a>
+            <a href="#">contact</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- ==========  HERO section – light, airy, beautiful  ========== -->
+    <section class="hero">
+        <h1>where <span>simplicity</span><br>whispers beauty</h1>
+        <div class="sub">
+            <i class="fa-regular fa-leaf" style="margin-right: 8px;"></i> 
+            thoughtful design · soft tones · timeless grace
+        </div>
+        <!-- tiny floating icon group (just for charm) -->
+        <div style="margin-top: 2rem; opacity:0.5; display: flex; gap: 1.2rem; font-size: 1.3rem;">
+            <i class="fa-regular fa-sun"></i>
+            <i class="fa-regular fa-moon"></i>
+            <i class="fa-regular fa-hand-peace"></i>
+        </div>
+    </section>
+
+    <!-- subtle wave separator (pure SVG) -->
+    <div class="custom-wave">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" width="100%" height="50px" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,30 C480,110 960,-20 1440,40 L1440,100 L0,100 Z" fill="#fefcf9" opacity="0.8"></path>
+        </svg>
+    </div>
+
+    <!-- ==========  container for rest of content  ========== -->
+    <div class="container">
+
+        <!-- elegant card grid (timeless features) -->
+        <div class="feature-grid">
+            <div class="card">
+                <i class="fa-regular fa-gem"></i>
+                <h3>clarity</h3>
+                <p>clean forms & negative space that lets each element breathe.</p>
+            </div>
+            <div class="card">
+                <i class="fa-regular fa-heart"></i>
+                <h3>warmth</h3>
+                <p>natural palette, soft contrasts – feel instantly at ease.</p>
+            </div>
+            <div class="card">
+                <i class="fa-regular fa-compass"></i>
+                <h3>rhythm</h3>
+                <p>gentle visual flow, like a quiet walk through serene fields.</p>
+            </div>
+            <div class="card">
+                <i class="fa-regular fa-hourglass-half"></i>
+                <h3>timeless</h3>
+                <p>details made to last beyond trends – understated elegance.</p>
+            </div>
+        </div>
+
+        <!-- banner with a beautiful thought (prose) -->
+        <div class="serene-banner">
+            <i class="fa-regular fa-quote-right"></i>
+            <p>“elegance is not standing out, but being remembered in silence. like the light of dawn — soft, yet entire.”</p>
+            <div class="author">— 靜 (shizuka) · wabi-sabi muse</div>
+        </div>
+
+        <!-- minimal photo / art gallery (placeholder imagery – only descriptive alt, but looks elegant) -->
+        <h2 style="font-weight: 300; margin-bottom: 1rem; font-size: 2.3rem; color: #5e4437;">
+            <i class="fa-regular fa-image" style="margin-right: 12px;"></i>fleeting stills
+        </h2>
+        <div class="gallery-row">
+            <div class="gallery-item">
+                <!-- graceful placeholder (simple pastel gradient with icon) -->
+                <div style="width:100%; height:200px; background: linear-gradient(145deg, #f1dbcf, #ebcfbc); display: flex; align-items: center; justify-content: center; color: #b48d73; font-size: 3rem;">
+                    <i class="fa-regular fa-leaf"></i>
+                </div>
+                <div class="gallery-caption">morning leaf · gold hour</div>
+            </div>
+            <div class="gallery-item">
+                <div style="width:100%; height:200px; background: linear-gradient(145deg, #dccbbd, #eed5c0); display: flex; align-items: center; justify-content: center; color: #987f6a; font-size: 3rem;">
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <div class="gallery-caption">silent tide · coastal fog</div>
+            </div>
+            <div class="gallery-item">
+                <div style="width:100%; height:200px; background: linear-gradient(145deg, #eed9cc, #f1cfba); display: flex; align-items: center; justify-content: center; color: #a7866b; font-size: 3rem;">
+                    <i class="fa-regular fa-snowflake"></i>
+                </div>
+                <div class="gallery-caption">first frost · quiet path</div>
+            </div>
+            <div class="gallery-item">
+                <div style="width:100%; height:200px; background: linear-gradient(145deg, #e5cfc3, #ddc2ae); display: flex; align-items: center; justify-content: center; color: #9e7b60; font-size: 3rem;">
+                    <i class="fa-regular fa-moon"></i>
+                </div>
+                <div class="gallery-caption">twilight · cicada song</div>
+            </div>
+        </div>
+
+        <!-- tiny horizontal rule with delicate ornament -->
+        <hr>
+
+        <!-- another beautiful little detail : icon + message -->
+        <div style="display: flex; align-items: center; gap: 1rem; justify-content: center; margin: 2.5rem 0 2rem;">
+            <span class="tiny-dots">✻ ✻ ✻</span>
+            <i class="fa-regular fa-butterfly" style="font-size: 2rem; color:#be9a80;"></i>
+            <span class="tiny-dots">✻ ✻ ✻</span>
+        </div>
+        <p style="text-align: center; font-weight: 260; font-size: 1.2rem; max-width: 600px; margin: 0 auto 1rem;">
+            every pixel whispers intention. <br> this is a sanctuary for the eyes.
+        </p>
+    </div> <!-- end container -->
+</main>
+
+<!-- ==========  delicate footer ========== -->
+<footer>
+    <div class="container footer-content">
+        <div style="font-size: 1.1rem;">
+            <i class="fa-regular fa-copyright" style="margin-right: 6px;"></i> 2025 aura realm 
+        </div>
+        <div class="social">
+            <a href="#" aria-label="pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="spotify"><i class="fa-brands fa-spotify"></i></a>
+        </div>
+        <div style="font-weight: 250;">
+            made with <i class="fa-regular fa-heart" style="color:#d29b7a;"></i> & softness
+        </div>
+    </div>
+    <div style="margin-top: 1.2rem; font-size: 0.8rem; opacity: 0.5;">
+        🌿 a whisper of beauty in code · all is calm
+    </div>
+</footer>
+
+<!-- tiny back-to-top elegance (floating subtle) -->
+<div style="position: fixed; bottom: 2rem; right: 2rem; opacity: 0.5; background: #e8d6c4; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); backdrop-filter: blur(6px); border: 1px solid #ffe7da;">
+    <a href="#" style="color: #684f40; font-size: 1.5rem;"><i class="fa-regular fa-arrow-up"></i></a>
+</div>
+
 </body>
 </html>
